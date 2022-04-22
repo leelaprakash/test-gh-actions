@@ -1,0 +1,85 @@
+{
+    "taskDefinitionArn": "arn:aws:ecs:us-west-2:005217085396:task-definition/test-nginx:1",
+    "containerDefinitions": [
+        {
+            "name": "httpd",
+            "image": "public.ecr.aws/docker/library/httpd:latest",
+            "cpu": 0,
+            "portMappings": [],
+            "essential": true,
+            "environment": [
+                {
+                    "name": "nginx-variable",
+                    "value": "enable-dns-refresh-123-456"
+                },
+                {
+                    "name": "nginx-variableasdfert3",
+                    "value": "sdfg"
+                },
+                {
+                    "name": "nginx-variableasdfe",
+                    "value": "sdf"
+                },
+                {
+                    "name": "nginx-variablesadf34",
+                    "value": "nginx-variable"
+                },
+                {
+                    "name": "nginx-variableasdfwe34",
+                    "value": "sdf"
+                },
+                {
+                    "name": "nginx-variableas7",
+                    "value": "sdfg"
+                }
+            ],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/test-nginx",
+                    "awslogs-region": "us-west-2",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            }
+        }
+    ],
+    "family": "test-nginx",
+    "taskRoleArn": "arn:aws:iam::005217085396:role/ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::005217085396:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "revision": 1,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "256",
+    "memory": "512"
+}
